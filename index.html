@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Proxy Periods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Teacher Proxy Periods</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher Name</th>
+                <th>Period</th>
+                <th>Class</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTable">
+            <!-- Data will be dynamically loaded here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Sample data, replace this with data from the backend later
+        const proxyData = [
+            { name: 'Mr. Smith', period: '1st', class: 'Class 5', date: '2024-12-01', time: '9:00 AM' },
+            { name: 'Ms. Johnson', period: '2nd', class: 'Class 4', date: '2024-12-01', time: '10:00 AM' }
+        ];
+
+        const tableBody = document.getElementById("proxyTable");
+
+        proxyData.forEach(item => {
+            const row = `<tr>
+                            <td>${item.name}</td>
+                            <td>${item.period}</td>
+                            <td>${item.class}</td>
+                            <td>${item.date}</td>
+                            <td>${item.time}</td>
+                        </tr>`;
+            tableBody.innerHTML += row;
+        });
+    </script>
+</body>
+</html>
