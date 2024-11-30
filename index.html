@@ -47,24 +47,143 @@
     </table>
 
     <script>
-        // Sample data, replace this with data from the backend later
-        const proxyData = [
-            { name: 'Mr. Smith', period: '1st', class: 'Class 5', date: '2024-12-01', time: '9:00 AM' },
-            { name: 'Ms. Johnson', period: '2nd', class: 'Class 4', date: '2024-12-01', time: '10:00 AM' }
-        ];
+       function updateEventDetails() {
+            const newName = document.getElementById("name-input").value;
+            const newDate = document.getElementById("date-input").value;
+            const newTime = document.getElementById("time-input").value;
 
-        const tableBody = document.getElementById("proxyTable");
-
-        proxyData.forEach(item => {
-            const row = `<tr>
-                            <td>${item.name}</td>
-                            <td>${item.period}</td>
-                            <td>${item.class}</td>
-                            <td>${item.date}</td>
-                            <td>${item.time}</td>
-                        </tr>`;
-            tableBody.innerHTML += row;
-        });
+            // Update the HTML content with the new inputs
+            document.getElementById("event-name").innerHTML = "Event Manager: " + newName;
+            document.getElementById("event-date").innerHTML = "Event Date: " + newDate;
+            document.getElementById("event-time").innerHTML = "Event Time: " + newTime;
+        }
     </script>
+</head>
+<body>
+    <h1>Welcome to Our Website!</h1>
+
+    <!-- Display the current event information -->
+    <p id="event-name">Event Manager: John Doe</p>
+    <p id="event-date">Event Date: December 15, 2024</p>
+    <p id="event-time">Event Time: 10:00 AM</p>
+
+    <hr>
+
+    <h2>Change Event Details</h2>
+    <label for="name-input">Enter Event Manager's Name:</label>
+    <input type="text" id="name-input" value="John Doe">
+    <br>
+
+    <label for="date-input">Enter Event Date:</label>
+    <input type="date" id="date-input" value="2024-12-15">
+    <br>
+
+    <label for="time-input">Enter Event Time:</label>
+    <input type="time" id="time-input" value="10:00">
+    <br>
+
+    <button onclick="updateEventDetails()">Update Event</button>
+</body>
+</html>
+User Input: The user can type in their name, pick a date, and select a time using the <input> fields.
+JavaScript Function: When the user clicks the Update Event button, the updateEventDetails() function is called, which updates the displayed event name, date, and time.
+Summary:
+Static Changes: Modify the values directly in your HTML.
+Dynamic Date/Time: Use JavaScript to display the current date and time automatically.
+Live Clock: Use setInterval() to continuously update the time every second.
+User Input: Allow users to change information using form inputs and dynamically update the content with JavaScript.
+Let me know if you need help with specific changes or if you have any questions!
+
+
+
+
+
+
+You said:
+and how to add more rows and column with more names period class date time in it
+ChatGPT said:
+ChatGPT
+To add more rows and columns with names, periods, class, date, and time, you will need to use HTML tables. Tables allow you to organize your content in rows and columns, which is perfect for displaying a schedule or proxy period data.
+
+Here's an example of how to create a table with multiple rows and columns for displaying names, periods, classes, dates, and times.
+
+Example: Adding Rows and Columns in a Table
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Schedule</h1>
+
+    <!-- Table to display data -->
+    <table>
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Class</th>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- First row of data -->
+            <tr>
+                <td>1</td>
+                <td>Math</td>
+                <td>Algebra</td>
+                <td>Mr. Smith</td>
+                <td>December 1, 2024</td>
+                <td>9:00 AM - 10:00 AM</td>
+            </tr>
+            <!-- Second row of data -->
+            <tr>
+                <td>2</td>
+                <td>Science</td>
+                <td>Physics</td>
+                <td>Mrs. Johnson</td>
+                <td>December 1, 2024</td>
+                <td>10:00 AM - 11:00 AM</td>
+            </tr>
+            <!-- Third row of data -->
+            <tr>
+                <td>3</td>
+                <td>History</td>
+                <td>World History</td>
+                <td>Mr. Lee</td>
+                <td>December 1, 2024</td>
+                <td>11:00 AM - 12:00 PM</td>
+            </tr>
+            <!-- Add more rows here as needed -->
+            <tr>
+                <td>4</td>
+                <td>English</td>
+                <td>Literature</td>
+                <td>Ms. Davis</td>
+                <td>December 1, 2024</td>
+                <td>1:00 PM - 2:00 PM</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
